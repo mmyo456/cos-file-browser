@@ -2,7 +2,7 @@
 目前仅支持腾讯云
 ## 介绍
 使用Vercel实现无需服务器可在网页查看腾讯cos目录环境
-
+![www.png](https://github.com/mmyo456/cos-file-browser/blob/149ab596fcde279510037dba186004eeef11462a/img/www.png) <br>
 ## 技术栈
 - Node.js
 - Express
