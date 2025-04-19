@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>腾讯云 COS 文件浏览器</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen flex flex-col">
+  <header class="bg-white dark:bg-gray-800 shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">COS 文件浏览器</h1>
+      <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main class="container mx-auto px-4 py-6 flex-grow">
+    <div id="error" class="hidden text-red-500 mb-4 text-center"></div>
+    <div class="flex flex-col md:flex-row gap-6">
+      <aside class="md:w-1/4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">文件路径</h2>
+        <div id="file-tree"></div>
+      </aside>
+      <section class="md:w-3/4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">文件列表</h2>
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <button id="back-button" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50" disabled>返回上一级</button>
+          <div id="breadcrumb" class="text-blue-600 dark:text-blue-400 flex flex-wrap"></div>
+        </div>
+        <div id="loading" class="hidden flex items-center justify-center">
+          <svg class="w-6 h-6 animate-spin text-gray-500" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span class="ml-2 text-gray-500">加载中...</span>
+        </div>
+        <div id="file-list" class="grid grid-cols-1 gap-4"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="bg-white dark:bg-gray-800 py-4">
+    <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+      &copy; 2025 By：mmyo456
+    </div>
+  </footer>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>

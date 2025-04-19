@@ -1,0 +1,23 @@
+{
+    "name": "cos-file-browser",
+    "version": "1.0.0",
+    "description": "腾讯云 COS 文件浏览器",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "build": "npm install",
+      "dev": "vercel dev"
+    },
+    "dependencies": {
+      "cos-nodejs-sdk-v5": "^2.13.7",
+      "dotenv": "^16.4.5",
+      "express": "^4.21.1",
+      "uuid": "^10.0.0"
+    },
+    "devDependencies": {
+      "vercel": "^32.0.0"
+    },
+    "engines": {
+      "node": "20"
+    }
+  }
